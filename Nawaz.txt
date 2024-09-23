@@ -1,0 +1,188 @@
+Date Functions By SHAIK NAWAZ
+
+These functions are commonly used to manipulate and extract information from date and time values in SQL queries. They are essential for tasks like date arithmetic, date comparisons, and date formatting
+
+1.	NOW(): Returns the current date and time.
+2.	CURDATE(): Returns the current date.
+3.	CURTIME(): Returns the current time.
+4.	DATE(): Extracts the date part from a datetime expression.
+5.	YEAR(): Extracts the year from a date.
+6.	MONTH(): Extracts the month from a date.
+7.	DAY(): Extracts the day from a date.
+8.	DATE_ADD(): Adds a specified time interval to a date.
+9.	DATE_SUB(): Subtracts a specified time interval from a date.
+10.	DATEDIFF(): Calculates the difference between two dates.
+
+
+
+1. **NOW()**: This function returns the current date and time.
+
+   Example:
+   ```sql
+   SELECT NOW(); -- Returns: '2024-06-10 15:30:00'
+   ```
+
+2. **CURDATE()**: Returns the current date without the time part.
+
+   Example:
+   ```sql
+   SELECT CURDATE(); -- Returns: '2024-06-10'
+   ```
+
+3. **CURTIME()**: Returns the current time without the date part.
+
+   Example:
+   ```sql
+   SELECT CURTIME(); -- Returns: '15:30:00'
+   ```
+
+4. **DATE()**: Extracts the date part from a datetime expression.
+
+   Example:
+   ```sql
+   SELECT DATE(NOW()); -- Returns: '2024-06-10'
+   ```
+
+5. **YEAR()**: Extracts the year from a date.
+
+   Example:
+   ```sql
+   SELECT YEAR(NOW()); -- Returns: 2024
+   ```
+
+
+
+
+
+6. **MONTH()**: Extracts the month from a date.
+
+   Example:
+   ```sql
+   SELECT MONTH(NOW()); -- Returns: 6
+   ```
+
+7. **DAY()**: Extracts the day from a date.
+
+   Example:
+   ```sql
+   SELECT DAY(NOW()); -- Returns: 10
+   ```
+
+8. **DATE_ADD()**: Adds a specified time interval to a date.
+
+   Example:
+   ```sql
+   SELECT DATE_ADD(NOW(), INTERVAL 1 WEEK); -- Returns: '2024-06-17'
+   ```
+
+9. **DATE_SUB()**: Subtracts a specified time interval from a date.
+
+   Example:
+   ```sql
+   SELECT DATE_SUB(NOW(), INTERVAL 1 MONTH); -- Returns: '2024-05-10'
+   ```
+
+10. **DATEDIFF()**: Calculates the difference between two dates.
+
+    Example:
+    ```sql
+    SELECT DATEDIFF('2024-06-10', '2024-06-01'); -- Returns: 9
+    ```
+
+Aggregate Functions:
+
+Aggregate functions in SQL are used to perform calculations on a set of values and return a single value as a result. Here are some short notes on aggregate functions:
+1.	COUNT(): Counts the number of rows in a result set.
+2.	SUM(): Calculates the sum of values in a column.
+3.	AVG(): Calculates the average value of a column.
+4.	MAX(): Returns the maximum value in a column.
+5.	MIN(): Returns the minimum value in a column.
+6.	GROUP BY: Groups the result set by one or more columns.
+7.	HAVING: Specifies a condition for filtering groups.
+8.	DISTINCT: Returns only distinct (different) values.
+9.	GROUP_CONCAT(): Concatenates values from multiple rows into a single string.
+10.	STD() / STDDEV(): Calculates the standard deviation of values in a column.
+
+
+
+
+1. **COUNT()**: Counts the number of rows.
+
+   Example:
+   ```sql
+   SELECT COUNT(*) FROM TableName; -- Returns: Total number of rows
+   ```
+
+
+
+
+
+2. **SUM()**: Calculates the sum of values in a column.
+
+   Example:
+   ```sql
+   SELECT SUM(Salary) FROM Employees; -- Returns: Total salary sum
+   ```
+
+3. **AVG()**: Calculates the average value of a column.
+
+   Example:
+   ```sql
+   SELECT AVG(Age) FROM Employees; -- Returns: Average age
+   ```
+
+4. **MAX()**: Returns the maximum value in a column.
+
+   Example:
+   ```sql
+   SELECT MAX(Salary) FROM Employees; -- Returns: Maximum salary
+   ```
+
+5. **MIN()**: Returns the minimum value in a column.
+
+   Example:
+   ```sql
+   SELECT MIN(Age) FROM Employees; -- Returns: Minimum age
+   ```
+
+6. **GROUP BY**: Groups the result set by one or more columns.
+
+   Example:
+   ```sql
+   SELECT Department, AVG(Salary) FROM Employees GROUP BY Department; -- Returns: Average salary per department
+   ```
+
+7. **HAVING**: Specifies a condition for filtering groups.
+
+   Example:
+   ```sql
+   SELECT Department, AVG(Salary) FROM Employees GROUP BY Department HAVING AVG(Salary) > 50000; 
+ -- Returns: Departments with average salary > 50000
+   ```
+
+
+
+
+
+8. **DISTINCT**: Returns only distinct (different) values.
+
+   Example:
+   ```sql
+   SELECT DISTINCT Department FROM Employees; -- Returns: Unique department names
+   ```
+
+9. **GROUP_CONCAT()**: Concatenates values from multiple rows into a single string.
+
+   Example:
+   ```sql
+   SELECT Department, GROUP_CONCAT(Name) FROM Employees GROUP BY Department; -- Returns: Employees grouped by department with their names concatenated
+   ```
+
+10. **STD() / STDDEV()**: Calculates the standard deviation of values in a column.
+
+    Example:
+    ```sql
+    SELECT STD(Salary) FROM Employees; -- Returns: Standard deviation of salaries
+    ```
+
+
