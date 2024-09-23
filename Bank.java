@@ -49,10 +49,6 @@ public class Bank {
     }
 
 }
-
-
-
-
 class ATM{
     public static void main(String[] args) {
         Bank obj=new Bank(40246124304L,3000.0,"SarvepalliHarendra");
